@@ -43,8 +43,17 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
 
 ## Planejamento
 
-- [ ] Construir os templates em HTML e CSS das duas views (busca & detalhes)
+- [ ] Construir os templates em HTML e CSS das duas views
+  - [x] Busca/Lista de filmes
+  - [ ] Detalhes do filme
 - [ ] Aprender a usar a API do The Movie DB
+- [ ] Criar os componentes React
+- [ ] Criar módulo de conexão com a API do The Movie DB
+- [ ] Definir o formato do State da aplicação
+- [ ] Definir como esse state será alterado pelas Actions
+- [ ] Criar as Actions
+- [ ] Adicionar a Store do Redux
+- [ ] Conectar os components que desparam Actions para a Store
 
 exemplo:
 
