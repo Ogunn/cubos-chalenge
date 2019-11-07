@@ -1,0 +1,29 @@
+/* BANNER  */
+
+.movie .banner {
+  /* max-height: fit-content; */
+  /* height: 149px; */
+  width: 30%;
+}
+
+.movie .banner img {
+  /* width: 200px; */
+  max-width: 100%;
+  height: auto;
+  min-height: 150px;
+  width: auto\9; /* ie8 */
+  display: block;
+  max-height: 300px;
+}
+
+@media only screen and (min-width: 480px) {
+  .movie .banner img {
+    max-height: 480px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .movie .banner img {
+    max-height: 900px;
+  }
+}
