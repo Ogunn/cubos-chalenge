@@ -65,7 +65,7 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
 
 ## Endpoints:
 
-1. search a movie by name: esse é o recurso que a aplicação utiliza para procurar um filme por nome.
+1. search a movie by name: **esse é o recurso que a aplicação utiliza para procurar um filme por nome.**
 
 - doc: https://developers.themoviedb.org/3/search/search-movies
 - doc: https://developers.themoviedb.org/3/getting-started/search-and-query-for-details
@@ -74,7 +74,7 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
 
     O exemplo acima utiliza Us como string de busca.
 
-2. search a movie by genre: esse é o recurso que a aplicação utiliza para prucurar um filme por gênero
+2. search a movie by genre: **esse é o recurso que a aplicação utiliza para prucurar um filme por gênero**
 
 - doc: https://developers.themoviedb.org/3/genres/get-movie-list
 - ex: "https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&sort_by=popularity.desc&page=1&with_genres=99"
