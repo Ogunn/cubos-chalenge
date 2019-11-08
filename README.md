@@ -45,12 +45,12 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
   - [x] Busca/Lista de filmes (view 1)
   - [ ] Detalhes do filme (view 2)
 - [ ] Aprender a usar a API do The Movie DB
-  - [ ] Fazer requisições e pegar dados de exemplos
-  - [ ] Listar os [endpoints](#endpoints) que interessam para satisfazer os requisitos da aplicação
+  - [x] Fazer requisições e pegar dados de exemplos
+  - [x] Listar os [endpoints](#endpoints) que interessam para satisfazer os requisitos da aplicação
 - [ ] Criar os componentes React
   - [ ] definir a componentização segundo o guia ['Thinking in React'](https://pt-br.reactjs.org/docs/thinking-in-react.html)
 - [ ] Criar módulo de conexão com a API do The Movie DB
-- [ ] Definir o formato do State da aplicação
+- [x] Definir o formato do State da aplicação
 - [ ] Definir como esse State será alterado pelas Actions
 - [ ] Criar as Actions
 - [ ] Adicionar a Store do Redux
