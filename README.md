@@ -61,7 +61,7 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
 
 ## Root URL: https://api.themoviedb.org/3/
 
-[Aqui](src/module.api/examples/README.md) alguns exemplos
+[Aqui](src/module.api/examples/examples.md) alguns exemplos
 
 ## Endpoints:
 
