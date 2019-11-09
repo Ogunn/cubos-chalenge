@@ -3,6 +3,8 @@ import { loadAPIKey } from "./authentication";
 
 config();
 
-test("Load API Key", () => {
-  expect(typeof loadAPIKey()).toBe("string");
+describe("Load API Key", () => {
+  test("The type is not undefined", () => {
+    expect(typeof loadAPIKey()).toBe("string");
+  });
 });
