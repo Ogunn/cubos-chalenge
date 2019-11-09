@@ -8,8 +8,6 @@ const App: React.FC = () => {
     console.log(query);
   };
 
-  // const buildMovieDbURL = (query: string) => {};
-
   return (
     <div className="App">
       <form
