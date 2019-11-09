@@ -1,8 +1,8 @@
 import { config } from "dotenv";
-import { loadAPI_KEY } from "./authentication";
+import { loadAPIKey } from "./authentication";
 
 config();
 
 test("Load API Key", () => {
-  expect(typeof loadAPI_KEY()).toBe("string");
+  expect(typeof loadAPIKey()).toBe("string");
 });
