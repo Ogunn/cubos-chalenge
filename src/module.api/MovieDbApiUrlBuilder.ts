@@ -20,7 +20,8 @@ const buildSearchByNameOrSearchByGenreURL = (
 
   if (isMovieDBGenre(query, GENRE_LIST)) {
     const [genre] = GENRE_LIST.filter(gnr => gnr.name === query);
-    return buildSearchByMovieGenreURL(genre.id);
+
+    if (genre) buildSearchByMovieGenreURL(genre.id);
   }
 
   return buildSearchByMovieNameURL(query);
