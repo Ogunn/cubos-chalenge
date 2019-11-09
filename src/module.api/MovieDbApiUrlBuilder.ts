@@ -1,5 +1,4 @@
 import { isMovieDBGenre, GENRE_LIST } from "./movieGenres";
-import { loadAPIKey } from "./authentication";
 
 /**
  * Take a query string, verifies if the string is a genre name
@@ -9,9 +8,10 @@ import { loadAPIKey } from "./authentication";
  * @param query
  * @returns URL
  */
-const buildSearchByNameOrSearchByGenreURL = (query: string): string => {
-  const apiKey = loadAPIKey();
-
+const buildSearchByNameOrSearchByGenreURL = (
+  query: string,
+  apiKey: string
+): string => {
   const buildSearchByMovieGenreURL = (genreID: number) =>
     `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&page=1&with_genres=${genreID}`;
 
