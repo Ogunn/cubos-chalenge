@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ["airbnb"],
+  extends: ["react-app"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
