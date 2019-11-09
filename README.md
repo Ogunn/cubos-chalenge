@@ -76,7 +76,7 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
 
 2. search a movie by genre: **esse é o recurso que a aplicação utiliza para prucurar um filme por gênero**
 
-- doc: https://developers.themoviedb.org/3/genres/get-movie-list
+- doc: https://developers.themoviedb.org/3/discover/movie-discover
 - ex: "https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&sort_by=popularity.desc&page=1&with_genres=99"
 
   O exemplo acima utiliza o gênero 'documentário', que possui id=99.
