@@ -1,0 +1,23 @@
+@import "search-view_movie.css";
+
+/* MAIN  */
+
+main {
+  /* width: 100vw; */
+  display: grid;
+}
+
+/* Form  */
+
+form {
+  display: grid;
+}
+
+input {
+  border-radius: 25px;
+  background-color: #ebebeb;
+  border: none;
+  color: #116193;
+  padding: 7px 20px;
+  margin: 1rem;
+}
