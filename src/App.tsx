@@ -12,10 +12,8 @@ interface IProps {
 
 const Banner: React.FC<IProps> = ({ImageUrl}) => {
   return (
-    <div className="movie flex">
-        <div className="banner">
-          <img src={ImageUrl} alt=""/>
-        </div>
+      <div className="banner">
+        <img src={ImageUrl} alt=""/>
       </div>
   )
 }
@@ -63,7 +61,9 @@ const App: React.FC = () => {
 
       {
         data && data.results.map((movie, index) => (
-          <Banner ImageUrl={baseImageUrl + movie.poster_path} />
+          <div className="movie flex" key={index}>
+            <Banner ImageUrl={baseImageUrl + movie.poster_path} />
+          </div>
         ))
       }
     </main>
