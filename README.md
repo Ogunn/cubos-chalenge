@@ -82,3 +82,28 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
   O exemplo acima utiliza o gênero 'documentário', que possui id=99.
 
 3. search a movie by id: https://api.themoviedb.org/3/movie/76341?api_key=<<api_key>>
+
+
+# Instruções de instalação
+
+1. Clone o repositório
+```shell
+  git clone https://github.com/Ogunn/cubos-chalenge.git
+```
+
+2. Adicione a API key do The Movie Data Base no arquivo .env-development e renomeie o arquivo para .env
+  
+    A API utilizada por esse app requer uma chave de segurança. Para manter essa chave protegida tome alguns cuidados:
+      
+      - Nunca faça o upload dos arquivos de build de um react-app que contenha informações sensíveis nas variáveis de ambiente. Veja a issue [Security: API key in the react build. #2](https://github.com/Ogunn/cubos-chalenge/issues/2)
+
+3. Instale as dependencias
+```shell
+  yarn install
+```
+
+4. Inicie o servidor
+```shell
+  yarn start
+```
+
