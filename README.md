@@ -49,7 +49,7 @@ As especificações a seguir _não são obrigatórias_, mas contam pontos _extra
   - [x] Listar os [endpoints](#endpoints) que interessam para satisfazer os requisitos da aplicação
 - [ ] Criar os componentes React
   - [ ] definir a componentização segundo o guia ['Thinking in React'](https://pt-br.reactjs.org/docs/thinking-in-react.html)
-- [ ] Criar módulo de conexão com a API do The Movie DB
+- [x] Criar módulo de conexão com a API do The Movie DB
 - [x] Definir o formato do State da aplicação
 - [ ] Definir como esse State será alterado pelas Actions
 - [ ] Criar as Actions
