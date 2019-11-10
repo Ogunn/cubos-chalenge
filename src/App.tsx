@@ -22,6 +22,7 @@ const Banner: React.FC<IProps> = ({ImageUrl}) => {
 
 const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('us');
+  const [query, setQuery] = React.useState<string>('us');
   const [data, setData] = React.useState<MDBResponse>();
   const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
 
@@ -30,7 +31,7 @@ const App: React.FC = () => {
       const apiKey = process.env.REACT_APP_API_KEY;
       let url: string;
       if (apiKey) {
-        url = buildSearchByNameOrSearchByGenreURL(inputValue, apiKey);
+        url = buildSearchByNameOrSearchByGenreURL(query, apiKey);
         const result = await axios(url);
 
         setData(result.data);
@@ -38,7 +39,7 @@ const App: React.FC = () => {
     }
 
     fetchData();
-  }, []);
+  }, [query]);
 
   return (
     <div className="App">
@@ -48,7 +49,11 @@ const App: React.FC = () => {
       </h1>
     </header>
     <main>
-      <form onSubmit={(e) => { e.preventDefault(); }}>
+      <form onSubmit={
+        (e) => { 
+          e.preventDefault();
+          setQuery(inputValue) 
+        }}>
         <input
           type="text"
           placeholder="Busque um filme por nome, ano ou gênero."
