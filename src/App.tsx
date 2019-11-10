@@ -6,6 +6,20 @@ import './app.css';
 import buildSearchByNameOrSearchByGenreURL from './module.api/MovieDbApiUrlBuilder';
 import { MDBResponse } from './module.api/interfaces/MovieDBInterfaces';
 
+interface IProps {
+  ImageUrl: string;
+}
+
+const Banner: React.FC<IProps> = ({ImageUrl}) => {
+  return (
+    <div className="movie flex">
+        <div className="banner">
+          <img src={ImageUrl} alt=""/>
+        </div>
+      </div>
+  )
+}
+
 const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('us');
   const [data, setData] = React.useState<MDBResponse>();
@@ -24,21 +38,7 @@ const App: React.FC = () => {
     }
 
     fetchData();
-  }, [inputValue]);
-
-  const banner = (index: number) => {
-    let imageUrl;
-    if (data) {
-      imageUrl = data.results[index].poster_path;
-    }
-    return (
-      <div className="movie flex">
-        <div className="banner">
-          <img src={baseImageUrl + imageUrl} alt=""/>
-        </div>
-      </div>
-    )
-  }
+  }, []);
 
   return (
     <div className="App">
@@ -58,11 +58,9 @@ const App: React.FC = () => {
 
       {
         data && data.results.map((movie, index) => (
-          banner(index)
-          
+          <Banner ImageUrl={baseImageUrl + movie.poster_path} />
         ))
       }
-      
     </main>
     </div>
   );
