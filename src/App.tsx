@@ -6,17 +6,7 @@ import './app.css';
 import buildSearchByNameOrSearchByGenreURL from './module.api/MovieDbApiUrlBuilder';
 import { MDBResponse } from './module.api/interfaces/MovieDBInterfaces';
 
-interface IBannerProps {
-  ImageUrl: string;
-}
-
-const Banner: React.FC<IBannerProps> = ({ImageUrl}) => {
-  return (
-      <div className="banner">
-        <img src={ImageUrl} alt=""/>
-      </div>
-  )
-}
+import MovieCard from './components/MovieCard';
 
 const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('us');
@@ -59,29 +49,12 @@ const App: React.FC = () => {
         />
       </form>
       {
-        data && data.results.map((movie, index) => (
-          <div className="movie flex" key={index}>
-            <Banner ImageUrl={baseImageUrl + movie.poster_path} />
-
-            <div className="movie-info grid">
-              <h2 className="font-abel">{movie.original_title}</h2>
-              
-              <div className="sinopse">
-                <span className="rate">{movie.vote_average * 10}</span>
-            
-                <span className="release-date">{movie.release_date}</span>
-              
-                <p className="margin-0 font-lato">{movie.overview}</p>
-
-                {/* Need to extract this component in order to map the genre id (currently showing) to the genre name */}
-                <div className="categories">
-                  {movie.genre_ids.map((gnr, i) => (
-                    <span key={i}>{gnr}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+        data && data.results.map((movie) => (
+          <MovieCard 
+            movie={movie} 
+            posterUrl={baseImageUrl + movie.poster_path} 
+            key={movie.id}
+          />  
         ))
       }
     </main>
