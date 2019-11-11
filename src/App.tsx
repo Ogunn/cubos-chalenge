@@ -6,11 +6,11 @@ import './app.css';
 import buildSearchByNameOrSearchByGenreURL from './module.api/MovieDbApiUrlBuilder';
 import { MDBResponse } from './module.api/interfaces/MovieDBInterfaces';
 
-interface IProps {
+interface IBannerProps {
   ImageUrl: string;
 }
 
-const Banner: React.FC<IProps> = ({ImageUrl}) => {
+const Banner: React.FC<IBannerProps> = ({ImageUrl}) => {
   return (
       <div className="banner">
         <img src={ImageUrl} alt=""/>
@@ -58,7 +58,6 @@ const App: React.FC = () => {
           onChange={(event) => setInputValue(event.target.value)}
         />
       </form>
-
       {
         data && data.results.map((movie, index) => (
           <div className="movie flex" key={index}>
@@ -81,10 +80,7 @@ const App: React.FC = () => {
                   ))}
                 </div>
               </div>
-
             </div>
-
-            
           </div>
         ))
       }
