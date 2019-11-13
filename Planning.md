@@ -18,16 +18,10 @@
 
 ## To Refact
 
-- [ ] Extract the movie element to a separeted component called MovieCard
-
-  `App.tsx`
-  ``` tsx
-    data && data.results.map((movie, index) => (
-      <div className="movie flex" key={index}>
-  ```
+- [x] Extract the movie element to a separeted component called MovieCard
 - [ ] Extract the categories element to a separeted component colled CategoryBabges
 
-  `App.tsx`
+  `src/App.tsx`
   ``` tsx
     <div className="categories">
       {movie.genre_ids.map((gnr, i) => (
@@ -37,3 +31,9 @@
   ```
 
 - [ ] Create a custo hook to fetch data
+- [ ] Fetch BaseUrl in order to build the poster URL.
+  
+  `src/App.tsx`
+  ```tsx
+  const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
+  ```
