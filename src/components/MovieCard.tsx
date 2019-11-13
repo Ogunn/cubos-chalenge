@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
-import { GENRE_LIST } from "../module.api/movieGenres";
+import { getMovieGenreById } from "../module.api/movieGenres";
 import Banner from "./Banner";
 import Badge from "./Badge";
 
@@ -27,7 +27,7 @@ const MovieCard: React.FC<IMovieCardProps> = ({ movie, posterUrl }) => {
 
           <div className="categories">
             {movie.genre_ids.map(genreId => {
-              const [genre] = GENRE_LIST.filter(gnr => gnr.id === genreId);
+              const genre = getMovieGenreById(genreId);
               return <Badge text={genre.name} key={genre.id} />;
             })}
           </div>

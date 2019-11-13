@@ -15,6 +15,11 @@ export const isMovieDBGenre = (word: string, genreList: MDBMovieGenre[]) => {
   return genre.length > 0;
 };
 
+export const getMovieGenreById = (id: number) => {
+  const [genre] = GENRE_LIST.filter(gnr => gnr.id === id);
+  return genre;
+};
+
 export const GENRE_LIST: MDBMovieGenre[] = [
   {
     id: 28,
