@@ -1,12 +1,11 @@
 import * as React from 'react';
 import axios from 'axios';
 
-import './app.css';
-
 import buildSearchByNameOrSearchByGenreURL from './module.api/MovieDbApiUrlBuilder';
 import { MDBResponse } from './module.api/interfaces/MovieDBInterfaces';
-
 import MovieCard from './components/MovieCard';
+
+import './app.css';
 
 const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('us');

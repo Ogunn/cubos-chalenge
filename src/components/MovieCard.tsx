@@ -1,16 +1,17 @@
 import * as React from 'react';
 
 import { Result as Movie } from '../module.api/interfaces/MovieDBInterfaces';
+import { GENRE_LIST } from '../module.api/movieGenres';
+import Banner from './Banner';
 
-interface IBannerProps {
-  ImageUrl: string;
+interface IGenreBadgeProps {
+  genreId: number;
 }
 
-const Banner: React.FC<IBannerProps> = ({ImageUrl}) => {
+const MovieGenreBadge: React.FC<IGenreBadgeProps> = ({genreId}) => {
+  const [ genre ] = GENRE_LIST.filter(gnr => gnr.id === genreId)
   return (
-      <div className="banner">
-        <img src={ImageUrl} alt=""/>
-      </div>
+    <span key={genre.id}>{genre.name}</span>
   )
 }
 
@@ -37,7 +38,7 @@ const MovieCard: React.FC<IMovieCardProps> = ({movie, posterUrl}) => {
         {/* Need to extract this component in order to map the genre id (currently showing) to the genre name */}
         <div className="categories">
           {movie.genre_ids.map((gnr, i) => (
-            <span key={i}>{gnr}</span>
+            <MovieGenreBadge genreId={gnr} />
           ))}
         </div>
       </div>
