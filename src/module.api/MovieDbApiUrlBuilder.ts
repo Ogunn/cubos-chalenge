@@ -1,4 +1,4 @@
-import { isMovieDBGenre, GENRE_LIST } from "./movieGenres";
+import { isMovieDBGenre, genreList, getMovieGenreByName } from "./movieGenres";
 
 /**
  * Take a query string, verifies if the string is a genre name
@@ -12,16 +12,24 @@ const buildSearchByNameOrSearchByGenreURL = (
   query: string,
   apiKey: string
 ): string => {
+  /**
+   *
+   * @param {number} genreId - the genre id that is acepted by The Movie Databasa API.
+   */
   const buildSearchByMovieGenreURL = (genreID: number) =>
     `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&page=1&with_genres=${genreID}`;
 
+  /**
+   *
+   * @param {string} MovieName - the movie name.
+   */
   const buildSearchByMovieNameURL = (movieName: string) =>
     `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieName}`;
 
-  if (isMovieDBGenre(query, GENRE_LIST)) {
-    const [genre] = GENRE_LIST.filter(gnr => gnr.name === query);
+  if (isMovieDBGenre(query, genreList)) {
+    const genre = getMovieGenreByName(query);
 
-    if (genre) buildSearchByMovieGenreURL(genre.id);
+    if (genre) return buildSearchByMovieGenreURL(genre.id);
   }
 
   return buildSearchByMovieNameURL(query);
