@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./Form.css";
 
 interface IFormProps {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
