@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
 import { getMovieGenreById } from "../module.api/movieGenres";
-
 import Badge from "./Badge";
+
+import "./CardContent.css";
 
 interface ICardContentProps {
   movie: Movie;

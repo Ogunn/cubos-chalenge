@@ -12,7 +12,7 @@ interface IMovieCardProps {
 
 const MovieCard: React.FC<IMovieCardProps> = ({ movie, posterUrl }) => {
   return (
-    <div className="movie flex" key={movie.id}>
+    <div className="movie-card flex" key={movie.id}>
       <Banner ImageUrl={posterUrl} />
       <CardContent movie={movie} />
     </div>
