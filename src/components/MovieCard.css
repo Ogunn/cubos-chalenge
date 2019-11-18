@@ -1,3 +1,42 @@
+.movie {
+  background-color: #ebebeb;
+  height: 150px;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+/* Movie Name  */
+
+.movie h2 {
+  margin: 0;
+  padding: 0.6rem 0 0 80px;
+  background-color: #116193;
+
+  /* font */
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 480px) {
+  .movie {
+    height: 216px;
+  }
+
+  .movie h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .movie {
+    height: 297px;
+  }
+}
+
 .movie .movie-info {
   width: 70%;
   grid-template-rows: 1fr 8fr;
@@ -62,13 +101,6 @@
 
   font-size: 0.7rem;
   color: #116193;
-}
-
-.movie .movie-info .sinopse .categories span {
-  border: 2px solid #116193;
-  padding: 2px;
-  border-radius: 20px;
-  background-color: white;
 }
 
 @media only screen and (min-width: 480px) {

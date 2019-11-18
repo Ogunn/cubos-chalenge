@@ -1,9 +1,10 @@
 import * as React from "react";
-
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
 import { getMovieGenreById } from "../module.api/movieGenres";
 import Banner from "./Banner";
 import Badge from "./Badge";
+
+import "./MovieCard.css";
 
 interface IMovieCardProps {
   movie: Movie;

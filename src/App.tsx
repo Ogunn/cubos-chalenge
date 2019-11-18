@@ -7,7 +7,7 @@ import MovieCard from "./components/MovieCard";
 import Header from "./components/Header";
 import Form from "./components/Form";
 
-import "./app.css";
+import "./App.css";
 
 const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>("us");

@@ -1,11 +1,12 @@
 import * as React from "react";
+import "./Badge.css";
 
 interface IBadgeProps {
   text: string;
 }
 
 const Badge: React.FC<IBadgeProps> = ({ text }) => {
-  return <span>{text}</span>;
+  return <span className="badge">{text}</span>;
 };
 
 export default Badge;
