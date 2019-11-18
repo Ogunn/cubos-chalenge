@@ -1,4 +1,6 @@
 config/keys.json
 .env
 
+build/
+
 node_modules/

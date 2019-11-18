@@ -2,7 +2,7 @@ const search_movie_by_name =
   "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher";
 
 const by_genre =
-  "https://api.themoviedb.org/3/discover/movie?api_key=d884e331c73a682a488cf33f32f919ed&sort_by=popularity.desc&page=1&with_genres=99";
+  "https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&sort_by=popularity.desc&page=1&with_genres=99";
 // organizado pro popularidade
 // gênero: documentário, id: 99
 

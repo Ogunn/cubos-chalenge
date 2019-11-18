@@ -1,14 +1,3 @@
-@import "search-view_movie.css";
-
-/* MAIN  */
-
-main {
-  /* width: 100vw; */
-  display: grid;
-}
-
-/* Form  */
-
 form {
   display: grid;
 }

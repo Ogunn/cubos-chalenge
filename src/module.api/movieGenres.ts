@@ -2,7 +2,7 @@ import { MDBMovieGenre } from "./interfaces/MovieDBInterfaces";
 
 /**
  * Check if a word is equals a movie genre name.
- * The genre is an 'Movie DB API' type.
+ * A movie genre is an 'Movie DB API' type.
  *
  * @param word
  * @param genreList
@@ -15,7 +15,39 @@ export const isMovieDBGenre = (word: string, genreList: MDBMovieGenre[]) => {
   return genre.length > 0;
 };
 
-export const GENRE_LIST: MDBMovieGenre[] = [
+/**
+ *
+ * @param {number} id - the id of the genre.
+ * See the genreList to know about all the genre ids.
+ *
+ * @returns {MDBMovieGenre} genre - the movie genre.
+ */
+export const getMovieGenreById = (id: number) => {
+  const [genre] = genreList.filter(gnr => gnr.id === id);
+
+  return genre;
+};
+
+/**
+ *
+ * See the genreList to know about all the genre names.
+ *
+ * @param {string} name - the name of the genre.
+ * @returns {MDBMovieGenre} genre - the movie genre.
+ */
+export const getMovieGenreByName = (name: string) => {
+  const [genre] = genreList.filter(
+    gnr => gnr.name.toLowerCase() === name.toLowerCase()
+  );
+
+  return genre;
+};
+
+/**
+ *
+ * A list of all movie genre suported by The Movie Database API.
+ */
+export const genreList: MDBMovieGenre[] = [
   {
     id: 28,
     name: "Action"

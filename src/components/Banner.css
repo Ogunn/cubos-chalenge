@@ -1,12 +1,10 @@
-/* BANNER  */
-
-.movie .banner {
+.banner {
   /* max-height: fit-content; */
   /* height: 149px; */
   width: 30%;
 }
 
-.movie .banner img {
+.banner img {
   /* width: 200px; */
   max-width: 100%;
   height: auto;
@@ -17,13 +15,13 @@
 }
 
 @media only screen and (min-width: 480px) {
-  .movie .banner img {
+  .banner img {
     max-height: 480px;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .movie .banner img {
+  .banner img {
     max-height: 900px;
   }
 }

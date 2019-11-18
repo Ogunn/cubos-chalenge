@@ -1,0 +1,18 @@
+.movie-card {
+  background-color: #ebebeb;
+  height: 150px;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+@media only screen and (min-width: 480px) {
+  .movie-card {
+    height: 216px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .movie-card {
+    height: 297px;
+  }
+}

@@ -1,4 +1,4 @@
-// https://api.themoviedb.org/3/movie/76341?api_key=d884e331c73a682a488cf33f32f919ed
+// https://api.themoviedb.org/3/movie/76341?api_key=<<api_key>>
 
 interface State {
   query: string;
