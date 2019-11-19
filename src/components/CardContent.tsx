@@ -1,7 +1,9 @@
 import * as React from "react";
+import styled from "styled-components";
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
 import BadgeGroup from "./BadgeGroup";
 import RateBadge from "./RateBadge";
+import CardTitle from "./CardTitle";
 
 import "./CardContent.css";
 
@@ -10,16 +12,16 @@ interface ICardContentProps {
   height: number; // set movie-info height
 }
 
-/*
-  TODO: use styled component in this component.
-  The height of this component must have the height passed as prop height. That means
-  the height have to be set dynamicaly. That's why it needs to be a styled-component.
-*/
+const Div = styled.div`
+  width: 70%;
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+`;
 
 const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
   return (
-    <div className="movie-info grid">
-      <h2 className="font-abel">{movie.original_title}</h2>
+    <Div>
+      <CardTitle text={movie.original_title} />
 
       <div className="sinopse">
         <RateBadge rate={movie.vote_average * 10} />
@@ -30,7 +32,7 @@ const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
 
         <BadgeGroup genreIdList={movie.genre_ids} />
       </div>
-    </div>
+    </Div>
   );
 };
 
