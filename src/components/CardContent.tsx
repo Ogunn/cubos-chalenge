@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
 import BadgeGroup from "./BadgeGroup";
+import RateBadge from "./RateBadge";
 
 import "./CardContent.css";
 
@@ -21,7 +22,7 @@ const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
       <h2 className="font-abel">{movie.original_title}</h2>
 
       <div className="sinopse">
-        <span className="rate">{movie.vote_average * 10}</span>
+        <RateBadge rate={movie.vote_average * 10} />
 
         <span className="release-date">{movie.release_date}</span>
 
