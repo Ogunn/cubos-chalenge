@@ -6,8 +6,9 @@ interface IBadgeProps {
 }
 
 const Span = styled.span`
-  border: 2px solid #116193;
-  padding: 2px;
+  border: 1px solid #116193;
+  padding: 0 5px;
+  margin: 1px;
   border-radius: 20px;
   background-color: white;
 `;
