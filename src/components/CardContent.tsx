@@ -12,15 +12,17 @@ interface ICardContentProps {
   height: number; // set movie-info height
 }
 
-const Div = styled.div`
+const Div = styled.div<{ height: number }>`
   width: 70%;
+  background-color: pink;
+  height: ${props => props.height}px;
   display: grid;
   grid-template-rows: 1fr 8fr;
 `;
 
 const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
   return (
-    <Div>
+    <Div height={height}>
       <CardTitle text={movie.original_title} />
 
       <div className="sinopse">
@@ -29,7 +31,6 @@ const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
         <span className="release-date">{movie.release_date}</span>
 
         <p className="margin-0 font-lato">{movie.overview}</p>
-
         <BadgeGroup genreIdList={movie.genre_ids} />
       </div>
     </Div>
