@@ -1,15 +1,22 @@
 import * as React from "react";
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
-import { getMovieGenreById } from "../module.api/movieGenres";
 import Badge from "./Badge";
+import BadgeGroup from "./BadgeGroup";
 
 import "./CardContent.css";
 
 interface ICardContentProps {
   movie: Movie;
+  height: number; // set movie-info height
 }
 
-const CardContent: React.FC<ICardContentProps> = ({ movie }) => {
+/*
+  TODO: use styled component in this component.
+  The height of this component must have the height passed as prop height. That means
+  the height have to be set dynamicaly. That's why it needs to be a styled-component.
+*/
+
+const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
   return (
     <div className="movie-info grid">
       <h2 className="font-abel">{movie.original_title}</h2>
@@ -21,12 +28,7 @@ const CardContent: React.FC<ICardContentProps> = ({ movie }) => {
 
         <p className="margin-0 font-lato">{movie.overview}</p>
 
-        <div className="categories">
-          {movie.genre_ids.map(genreId => {
-            const genre = getMovieGenreById(genreId);
-            return <Badge text={genre.name} key={genre.id} />;
-          })}
-        </div>
+        <BadgeGroup genreIdList={movie.genre_ids} />
       </div>
     </div>
   );
