@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
-import Badge from "./Badge";
 import BadgeGroup from "./BadgeGroup";
 
 import "./CardContent.css";
