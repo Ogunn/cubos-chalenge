@@ -9,6 +9,7 @@ const H2 = styled.h2`
   margin: 0;
   padding: 6px 0 0 60px;
   background-color: #116193;
+  height: 1.6em;
 
   /* font */
   color: white;
