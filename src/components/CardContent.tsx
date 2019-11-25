@@ -14,7 +14,6 @@ interface ICardContentProps {
 
 const Div = styled.div<{ height: number }>`
   width: 70%;
-  background-color: pink;
   height: ${props => props.height}px;
   display: grid;
   grid-template-rows: 1fr 8fr;
