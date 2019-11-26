@@ -31,7 +31,7 @@ const App: React.FC = () => {
   }, [query]);
 
   return (
-    <div className="App">
+    <div>
       <Header />
 
       <main>
@@ -41,7 +41,7 @@ const App: React.FC = () => {
             setQuery(inputValue);
           }}
           handleInputChange={e => setInputValue(e.target.value)}
-          placeHolder="Busque um filme por nome, ano ou gênero."
+          placeHolder="Busque um filme por nome ou por gênero."
         />
         {data &&
           data.results.map(movie => (
