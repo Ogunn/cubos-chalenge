@@ -1,8 +1,8 @@
-import * as React from "react";
-import styled from "styled-components";
-import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
-import Banner from "./Banner";
-import CardContent from "./CardContent";
+import * as React from 'react';
+import styled from 'styled-components';
+import { Result as Movie } from '../service/api/types';
+import Banner from './Banner';
+import CardContent from './CardContent';
 
 interface IMovieCardProps {
   movie: Movie;

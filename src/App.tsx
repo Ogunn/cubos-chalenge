@@ -1,19 +1,19 @@
-import * as React from "react";
-import axios from "axios";
+import * as React from 'react';
+import axios from 'axios';
 
-import buildSearchByNameOrSearchByGenreURL from "./module.api/MovieDbApiUrlBuilder";
-import { MDBResponse } from "./module.api/interfaces/MovieDBInterfaces";
-import MovieCard from "./components/MovieCard";
-import Header from "./components/Header";
-import Form from "./components/Form";
+import buildSearchByNameOrSearchByGenreURL from './service/api/MovieDbApiUrlBuilder';
+import { MDBResponse } from './service/api/types';
+import MovieCard from './components/MovieCard';
+import Header from './components/Header';
+import Form from './components/Form';
 
-import "./App.css";
+import './App.css';
 
 const App: React.FC = () => {
-  const [inputValue, setInputValue] = React.useState<string>("us");
-  const [query, setQuery] = React.useState<string>("us");
+  const [inputValue, setInputValue] = React.useState<string>('us');
+  const [query, setQuery] = React.useState<string>('us');
   const [data, setData] = React.useState<MDBResponse>();
-  const baseImageUrl = "https://image.tmdb.org/t/p/w300"; // It's important get this string dinamicaly because it may change over time.
+  const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
 
   React.useEffect(() => {
     const fetchData = async () => {

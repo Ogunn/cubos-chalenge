@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Result as Movie } from "../module.api/interfaces/MovieDBInterfaces";
+import { Result as Movie } from '../service/api/types';
 
-import BadgeGroup from "./BadgeGroup";
-import RateBadge from "./RateBadge";
-import CardTitle from "./CardTitle";
+import BadgeGroup from './BadgeGroup';
+import RateBadge from './RateBadge';
+import CardTitle from './CardTitle';
 
 interface ICardContentProps {
   movie: Movie;
@@ -23,7 +23,7 @@ const Sinopse = styled.div`
   position: relative;
 
   .release-date {
-    font-family: "Abel", sans-serif;
+    font-family: 'Abel', sans-serif;
     font-size: 0.6rem;
     margin-left: 3px;
     position: absolute;
