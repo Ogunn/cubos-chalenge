@@ -1,29 +1,29 @@
-import * as React from "react";
-import axios from "axios";
+import * as React from 'react';
 
-import buildSearchByNameOrSearchByGenreURL from "./module.api/MovieDbApiUrlBuilder";
-import { MDBResponse } from "./module.api/interfaces/MovieDBInterfaces";
-import MovieCard from "./components/MovieCard";
-import Header from "./components/Header";
-import Form from "./components/Form";
+import { SearchMovieResponse } from './service/api/types';
+import api from './service/api';
 
-import "./App.css";
+import MovieCard from './components/MovieCard';
+import Header from './components/Header';
+import Form from './components/Form';
+
+import './App.css';
 
 const App: React.FC = () => {
-  const [inputValue, setInputValue] = React.useState<string>("us");
-  const [query, setQuery] = React.useState<string>("us");
-  const [data, setData] = React.useState<MDBResponse>();
-  const baseImageUrl = "https://image.tmdb.org/t/p/w300"; // It's important get this string dinamicaly because it may change over time.
+  const [inputValue, setInputValue] = React.useState<string>('us');
+  const [query, setQuery] = React.useState<string>('us');
+  const [data, setData] = React.useState<SearchMovieResponse>();
+  const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
 
   React.useEffect(() => {
+    console.log('useEffect called!');
     const fetchData = async () => {
-      const apiKey = process.env.REACT_APP_API_KEY;
-      let url: string;
-      if (apiKey) {
-        url = buildSearchByNameOrSearchByGenreURL(query, apiKey);
-        const result = await axios(url);
+      const data = await api.search.movie(query);
+      console.log('useEffect fetched data: ', data);
 
-        setData(result.data);
+      if (data) {
+        console.log('setData called: ', data);
+        setData(data);
       }
     };
 

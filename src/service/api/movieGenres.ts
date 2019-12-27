@@ -1,4 +1,4 @@
-import { MDBMovieGenre } from "./interfaces/MovieDBInterfaces";
+import { MDBMovieGenre } from "./types";
 
 /**
  * Check if a word is equals a movie genre name.

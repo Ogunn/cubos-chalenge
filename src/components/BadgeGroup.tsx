@@ -1,7 +1,7 @@
-import * as React from "react";
-import Badge from "./Badge";
-import { getMovieGenreById } from "../module.api/movieGenres";
-import styled from "styled-components";
+import * as React from 'react';
+import Badge from './Badge';
+import { getMovieGenreById } from '../service/api/movieGenres';
+import styled from 'styled-components';
 
 interface IBadgeGroupProps {
   genreIdList: number[];
