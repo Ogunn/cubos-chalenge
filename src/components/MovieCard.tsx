@@ -12,19 +12,6 @@ interface IMovieCardProps {
 const Div = styled.div`
   background-color: #ebebeb;
   margin-bottom: 15px;
-
-  @media only screen and (min-width: 375px) {
-  }
-  @media only screen and (min-width: 425px) {
-  }
-  @media only screen and (min-width: 768px) {
-  }
-  @media only screen and (min-width: 1024px) {
-  }
-  @media only screen and (min-width: 1440px) {
-  }
-  @media only screen and (min-width: 2560px) {
-  }
 `;
 
 const MovieCard: React.FC<IMovieCardProps> = ({ movie, posterUrl }) => {
