@@ -4,7 +4,7 @@ import { SearchMovieResponse } from './service/api/types';
 import api from './service/api';
 
 import MovieCard from './components/MovieCard';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import Form from './components/Form';
 
 import './App.css';
@@ -16,13 +16,10 @@ const App: React.FC = () => {
   const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
 
   React.useEffect(() => {
-    console.log('useEffect called!');
     const fetchData = async () => {
       const data = await api.search.movie(query);
-      console.log('useEffect fetched data: ', data);
 
       if (data) {
-        console.log('setData called: ', data);
         setData(data);
       }
     };
