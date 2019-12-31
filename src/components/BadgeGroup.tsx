@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Badge from './Badge';
+import Ship from './Ship';
 import { getMovieGenreById } from '../service/api/genres/utils';
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ const BadgeGroup: React.FC<IBadgeGroupProps> = ({ genreIdList }) => {
     <Div>
       {genreIdList.map(genreId => {
         const genre = getMovieGenreById(genreId);
-        return <Badge text={genre.name} key={genre.id} />;
+        return <Ship text={genre.name} key={genre.id} />;
       })}
     </Div>
   );
