@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Badge from './Badge';
-import { getMovieGenreById } from '../service/api/movieGenres';
+import { getMovieGenreById } from '../service/api/genres/utils';
 import styled from 'styled-components';
 
 interface IBadgeGroupProps {
