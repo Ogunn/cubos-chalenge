@@ -1,11 +1,11 @@
-import { SearchMovieResponse } from './types';
-import axios from './axios';
+import { Response } from './types';
+import axios from '../axios';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export const movie = async (query: string) => {
   try {
-    const response = await axios.get<SearchMovieResponse>('/search/movie', {
+    const response = await axios.get<Response>('/search/movie', {
       params: {
         api_key: apiKey,
         query

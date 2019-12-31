@@ -1,13 +1,13 @@
-import { MDBMovieGenre } from "./types";
+import { Genre } from './types';
 
 /**
+ * USELESS UNTIL NOW
  * Check if a word is equals a movie genre name.
  * A movie genre is an 'Movie DB API' type.
- *
  * @param word
  * @param genreList
  */
-export const isMovieDBGenre = (word: string, genreList: MDBMovieGenre[]) => {
+export const isMovieDBGenre = (word: string, genreList: Genre[]) => {
   const genre = genreList.filter(
     gnr => gnr.name.toLowerCase() === word.toLowerCase()
   );
@@ -16,10 +16,8 @@ export const isMovieDBGenre = (word: string, genreList: MDBMovieGenre[]) => {
 };
 
 /**
- *
  * @param {number} id - the id of the genre.
  * See the genreList to know about all the genre ids.
- *
  * @returns {MDBMovieGenre} genre - the movie genre.
  */
 export const getMovieGenreById = (id: number) => {
@@ -29,9 +27,7 @@ export const getMovieGenreById = (id: number) => {
 };
 
 /**
- *
- * See the genreList to know about all the genre names.
- *
+ * USELESS UNTIL NOW
  * @param {string} name - the name of the genre.
  * @returns {MDBMovieGenre} genre - the movie genre.
  */
@@ -44,84 +40,83 @@ export const getMovieGenreByName = (name: string) => {
 };
 
 /**
- *
  * A list of all movie genre suported by The Movie Database API.
  */
-export const genreList: MDBMovieGenre[] = [
+export const genreList: Genre[] = [
   {
     id: 28,
-    name: "Action"
+    name: 'Action'
   },
   {
     id: 12,
-    name: "Adventure"
+    name: 'Adventure'
   },
   {
     id: 16,
-    name: "Animation"
+    name: 'Animation'
   },
   {
     id: 35,
-    name: "Comedy"
+    name: 'Comedy'
   },
   {
     id: 80,
-    name: "Crime"
+    name: 'Crime'
   },
   {
     id: 99,
-    name: "Documentary"
+    name: 'Documentary'
   },
   {
     id: 18,
-    name: "Drama"
+    name: 'Drama'
   },
   {
     id: 10751,
-    name: "Family"
+    name: 'Family'
   },
   {
     id: 14,
-    name: "Fantasy"
+    name: 'Fantasy'
   },
   {
     id: 36,
-    name: "History"
+    name: 'History'
   },
   {
     id: 27,
-    name: "Horror"
+    name: 'Horror'
   },
   {
     id: 10402,
-    name: "Music"
+    name: 'Music'
   },
   {
     id: 9648,
-    name: "Mystery"
+    name: 'Mystery'
   },
   {
     id: 10749,
-    name: "Romance"
+    name: 'Romance'
   },
   {
     id: 878,
-    name: "Science Fiction"
+    name: 'Science Fiction'
   },
   {
     id: 10770,
-    name: "TV Movie"
+    name: 'TV Movie'
   },
   {
     id: 53,
-    name: "Thriller"
+    name: 'Thriller'
   },
   {
     id: 10752,
-    name: "War"
+    name: 'War'
   },
   {
     id: 37,
-    name: "Western"
+    name: 'Western'
   }
 ];
