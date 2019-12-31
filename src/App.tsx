@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Header />
+      <Header text="Movies" />
 
       <main>
         <Form
