@@ -3,6 +3,6 @@ export interface Genre {
   name: string;
 }
 
-export interface Response {
+export interface GetListResponse {
   genres: Genre[];
 }
