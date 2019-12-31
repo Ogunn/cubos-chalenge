@@ -1,11 +1,11 @@
-export interface Response {
+export interface MovieResponse {
   page: number;
   total_results: number;
   total_pages: number;
-  results: Result[];
+  results: Movie[];
 }
 
-export interface Result {
+export interface Movie {
   popularity: number;
   vote_count: number;
   video: boolean;
