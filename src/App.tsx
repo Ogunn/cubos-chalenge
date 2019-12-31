@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Movie } from './service/api/search/types';
 import api from './service/api';
+import { Movie } from './service/api/search/types';
 
 import MovieCard from './components/MovieCard';
 import Header from './components/Header/Header';
@@ -13,14 +13,15 @@ const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('');
   const [query, setQuery] = React.useState<string>('black panther');
   const [movieList, setMovieList] = React.useState<Movie[]>();
+
   const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
 
   React.useEffect(() => {
     const fetchData = async () => {
-      const data = await api.search.movie(query);
+      const movieListResponse = await api.search.movie(query);
 
-      if (data) {
-        setMovieList(data.results);
+      if (movieListResponse) {
+        setMovieList(movieListResponse.results);
       }
     };
 
