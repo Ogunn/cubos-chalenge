@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { SearchMovieResponse } from './service/api/types';
+import { Response } from './service/api/search/types';
 import api from './service/api';
 
 import MovieCard from './components/MovieCard';
@@ -10,9 +10,9 @@ import Form from './components/Form';
 import './App.css';
 
 const App: React.FC = () => {
-  const [inputValue, setInputValue] = React.useState<string>('us');
-  const [query, setQuery] = React.useState<string>('us');
-  const [data, setData] = React.useState<SearchMovieResponse>();
+  const [inputValue, setInputValue] = React.useState<string>('');
+  const [query, setQuery] = React.useState<string>('black panther');
+  const [data, setData] = React.useState<Response>();
   const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
 
   React.useEffect(() => {
