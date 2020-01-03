@@ -1,11 +1,6 @@
-import * as React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-interface IRateBadgeProps {
-  rate: string | number;
-}
-
-const Span = styled.span`
+export const Span = styled.span`
   background-color: #116193;
   display: inline-block;
 
@@ -24,9 +19,3 @@ const Span = styled.span`
   font-size: 0.7rem;
   color: white;
 `;
-
-const RateBadge: React.FC<IRateBadgeProps> = ({ rate }) => {
-  return <Span>{rate}</Span>;
-};
-
-export default RateBadge;

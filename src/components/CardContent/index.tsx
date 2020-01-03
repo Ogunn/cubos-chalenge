@@ -3,7 +3,7 @@ import React from 'react';
 import { Result as Movie } from '../../service/api/types';
 
 import ShipGroup from '../ShipGroup';
-import RateBadge from '../RateBadge';
+import Rate from '../Rate';
 import CardTitle from '../CardTitle';
 
 import { Div, Sinopse } from './styles';
@@ -19,7 +19,7 @@ const CardContent: React.FC<ICardContentProps> = ({ movie, height }) => {
       <CardTitle text={movie.original_title} />
 
       <Sinopse className="sinopse">
-        <RateBadge rate={movie.vote_average * 10} />
+        <Rate rate={movie.vote_average * 10} />
 
         <span className="release-date">{movie.release_date}</span>
 
