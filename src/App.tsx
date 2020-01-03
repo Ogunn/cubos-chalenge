@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import api from './service/api';
 import { Movie } from './service/api/search/types';
 
-import Header from './components/Header/Header';
+import Header from './components/Header';
 import Form from './components/Form';
 import MovieList from './components/MovieList';
 
