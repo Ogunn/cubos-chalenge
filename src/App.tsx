@@ -7,8 +7,6 @@ import MovieCard from './components/MovieCard';
 import Header from './components/Header/Header';
 import Form from './components/Form';
 
-import './App.css';
-
 const App: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('');
   const [query, setQuery] = React.useState<string>('black panther');
