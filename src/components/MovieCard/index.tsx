@@ -1,24 +1,19 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { Result as Movie } from '../service/api/types';
-import Banner from './Banner';
-import CardContent from './CardContent';
+import { Result as Movie } from '../../service/api/types';
+import Banner from '../Banner';
+import CardContent from '../CardContent';
+import { Div } from './styles';
 
 interface IMovieCardProps {
   movie: Movie;
   posterUrl: string;
 }
 
-const Div = styled.div`
-  background-color: #ebebeb;
-  margin-bottom: 15px;
-`;
-
 const MovieCard: React.FC<IMovieCardProps> = ({ movie, posterUrl }) => {
   const [bannerHeight, setBannerHeight] = React.useState();
 
   return (
-    <Div className="movie-card flex" key={movie.id}>
+    <Div className="flex" key={movie.id}>
       <Banner
         imageUrl={posterUrl}
         imageOffsetHeight={offsetHeight => {
