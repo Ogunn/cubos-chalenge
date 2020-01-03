@@ -16,22 +16,20 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const movieListResponse = await api.search.movie(query);
-
       if (movieListResponse) {
         setMovieList(movieListResponse.results);
       }
     };
-
     fetchData();
   }, [query]);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setInputValue(e.currentTarget.value);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setQuery(inputValue);
   };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setInputValue(e.currentTarget.value);
 
   return (
     <div>
