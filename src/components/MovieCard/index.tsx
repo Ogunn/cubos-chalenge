@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Result as Movie } from '../../service/api/types';
 import Banner from '../Banner';
 import CardContent from '../CardContent';
@@ -10,7 +10,7 @@ interface IMovieCardProps {
 }
 
 const MovieCard: React.FC<IMovieCardProps> = ({ movie, posterUrl }) => {
-  const [bannerHeight, setBannerHeight] = React.useState();
+  const [bannerHeight, setBannerHeight] = useState();
 
   return (
     <Div className="flex" key={movie.id}>
