@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard';
 import { Movie } from '../../service/api/search/types';
 
 interface IProps {
-  movieList: Movie[];
+  movieList: Movie[] | null;
   baseUrl: string;
 }
 
