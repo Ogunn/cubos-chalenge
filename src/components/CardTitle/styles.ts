@@ -1,11 +1,6 @@
-import * as React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-interface ICardTitleProps {
-  text: string;
-}
-
-const H2 = styled.h2`
+export const H2 = styled.h2`
   margin: 0;
   padding: 6px 0 0 60px;
   background-color: #116193;
@@ -23,9 +18,3 @@ const H2 = styled.h2`
     font-size: 1.5rem;
   }
 `;
-
-const CardTitle: React.FC<ICardTitleProps> = ({ text }) => {
-  return <H2 className="font-abel">{text}</H2>;
-};
-
-export default CardTitle;
