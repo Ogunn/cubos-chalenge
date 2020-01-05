@@ -3,16 +3,14 @@ import React, { useEffect, useState } from 'react';
 import api from './service/api';
 import { Movie } from './service/api/search/types';
 
-import { Header, MovieList } from './components';
-import { Container, TextField } from '@material-ui/core';
-import { useStyles } from './app.styles';
+import { Header, MovieList, Form } from './components';
+import { Container } from '@material-ui/core';
 
 const App: React.FC = () => {
   const [query, setQuery] = useState<string>('black panther');
   const [movieList, setMovieList] = useState<Movie[] | null>(null);
   const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
   const [time, setTime] = useState(0);
-  const classes = useStyles();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +29,7 @@ const App: React.FC = () => {
 
     const timeout = setTimeout(() => {
       setQuery(value);
-    }, 2000);
+    }, 1000);
 
     if (timeout) setTime(timeout);
   };
@@ -41,14 +39,7 @@ const App: React.FC = () => {
       <Header text="Movies" />
       <Container maxWidth="sm">
         <main>
-          <TextField
-            variant="outlined"
-            size="small"
-            margin="normal"
-            fullWidth
-            className={classes.root}
-            onChange={handleInputChange}
-          />
+          <Form handleInputChange={handleInputChange} />
           <MovieList movieList={movieList} baseUrl={baseImageUrl} />
         </main>
       </Container>
