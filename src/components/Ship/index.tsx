@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Span } from './styles';
 
-interface IShipProps {
+interface IProps {
   text: string;
 }
 
-const Ship: React.FC<IShipProps> = ({ text }) => {
+const Ship: React.FC<IProps> = ({ text }) => {
   return <Span>{text}</Span>;
 };
 

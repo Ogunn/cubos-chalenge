@@ -1,25 +1,23 @@
 import * as React from 'react';
-import { StyledForm } from './styles';
+import { TextField } from '@material-ui/core';
+import { useStyles } from './styles';
 
 interface IFormProps {
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeHolder: string;
 }
 
-const Form: React.FC<IFormProps> = ({
-  handleSubmit,
-  handleInputChange,
-  placeHolder
-}) => {
+const Form: React.FC<IFormProps> = ({ handleInputChange }) => {
+  const classes = useStyles();
+
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder={placeHolder}
-        onChange={handleInputChange}
-      />
-    </StyledForm>
+    <TextField
+      variant="outlined"
+      size="small"
+      margin="normal"
+      fullWidth
+      className={classes.root}
+      onChange={handleInputChange}
+    />
   );
 };
 

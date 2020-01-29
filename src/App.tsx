@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import api from './service/api';
 import { Movie } from './service/api/search/types';
 
-import { Header, Form, MovieList } from './components';
+import { Header, MovieList, Form } from './components';
+import { Container } from '@material-ui/core';
 
 const App: React.FC = () => {
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const [query, setQuery] = React.useState<string>('black panther');
-  const [movieList, setMovieList] = React.useState<Movie[] | null>(null);
+  const [query, setQuery] = useState<string>('black panther');
+  const [movieList, setMovieList] = useState<Movie[] | null>(null);
   const baseImageUrl = 'https://image.tmdb.org/t/p/w300'; // It's important get this string dinamicaly because it may change over time.
+  const [time, setTime] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,26 +22,28 @@ const App: React.FC = () => {
     fetchData();
   }, [query]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setQuery(inputValue);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.currentTarget;
+
+    if (time) clearTimeout(time);
+
+    const timeout = setTimeout(() => {
+      setQuery(value);
+    }, 1000);
+
+    if (timeout) setTime(timeout);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setInputValue(e.currentTarget.value);
-
   return (
-    <div>
+    <>
       <Header text="Movies" />
-      <main>
-        <Form
-          handleSubmit={handleSubmit}
-          handleInputChange={handleInputChange}
-          placeHolder="Busque um filme por nome ou por gênero."
-        />
-        <MovieList movieList={movieList} baseUrl={baseImageUrl} />
-      </main>
-    </div>
+      <Container maxWidth="sm">
+        <main>
+          <Form handleInputChange={handleInputChange} />
+          <MovieList movieList={movieList} baseUrl={baseImageUrl} />
+        </main>
+      </Container>
+    </>
   );
 };
 
