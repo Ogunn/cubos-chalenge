@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { TextField } from '@material-ui/core';
+
 import { useStyles } from './styles';
 
 interface IFormProps {
@@ -11,9 +12,9 @@ const Form: React.FC<IFormProps> = ({ handleInputChange }) => {
 
   return (
     <TextField
-      variant="outlined"
-      size="small"
-      margin="normal"
+      variant='outlined'
+      size='small'
+      margin='normal'
       fullWidth
       className={classes.root}
       onChange={handleInputChange}

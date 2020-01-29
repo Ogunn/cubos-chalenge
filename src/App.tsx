@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-
-import api from './service/api';
-import { Movie } from './service/api/search/types';
-
-import { Header, MovieList, Form } from './components';
 import { Container } from '@material-ui/core';
+
+import api, { Movie } from './service/api';
+import { Header, MovieList, Form } from './components';
 
 const App: React.FC = () => {
   const [query, setQuery] = useState<string>('black panther');
@@ -36,8 +34,8 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header text="Movies" />
-      <Container maxWidth="sm">
+      <Header text='Movies' />
+      <Container maxWidth='sm'>
         <main>
           <Form handleInputChange={handleInputChange} />
           <MovieList movieList={movieList} baseUrl={baseImageUrl} />

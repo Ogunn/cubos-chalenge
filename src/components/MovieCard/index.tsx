@@ -1,5 +1,6 @@
 import React, { useState, FC } from 'react';
-import { Result as Movie } from '../../service/api/types';
+
+import { Result as Movie } from '../../service/api';
 import { Banner, CardContent } from '../index';
 import { Div } from './styles';
 
@@ -12,7 +13,7 @@ const MovieCard: FC<IMovieCardProps> = ({ movie, posterUrl }) => {
   const [bannerHeight, setBannerHeight] = useState();
 
   return (
-    <Div className="flex">
+    <Div className='flex'>
       <Banner
         imageUrl={posterUrl}
         imageOffsetHeight={offsetHeight => {

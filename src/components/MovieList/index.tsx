@@ -1,6 +1,7 @@
 import React from 'react';
+
 import MovieCard from '../MovieCard';
-import { Movie } from '../../service/api/search/types';
+import { Movie } from '../../service/api';
 
 interface IProps {
   movieList: Movie[] | null;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
+import { getMovieGenreById } from '../../service/api';
 import Ship from '../Ship';
-import { getMovieGenreById } from '../../service/api/genres/utils';
 import { Div } from './styles';
 
 interface IShipGroupProps {
